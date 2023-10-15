@@ -1,0 +1,7 @@
+syntax = "proto3";
+package checkerz.checkerz;
+
+option go_package = "github.com/zetazzz/checker-z/x/checkerz/types";
+
+// Msg defines the Msg service.
+service Msg {}
