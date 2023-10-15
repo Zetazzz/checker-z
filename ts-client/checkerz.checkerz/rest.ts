@@ -9,6 +9,8 @@
  * ---------------------------------------------------------------
  */
 
+export type CheckerzMsgCreatePostResponse = object;
+
 /**
  * Params defines the parameters for the module.
  */

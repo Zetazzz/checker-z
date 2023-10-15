@@ -1,7 +1,19 @@
 syntax = "proto3";
+
 package checkerz.checkerz;
 
 option go_package = "github.com/zetazzz/checker-z/x/checkerz/types";
 
 // Msg defines the Msg service.
-service Msg {}
+service Msg {
+  rpc CreatePost (MsgCreatePost) returns (MsgCreatePostResponse);
+}
+message MsgCreatePost {
+  string creator = 1;
+  string title   = 2;
+  string body    = 3;
+  string memo    = 4;
+}
+
+message MsgCreatePostResponse {}
+
