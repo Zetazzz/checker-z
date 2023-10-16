@@ -1,0 +1,14 @@
+syntax = "proto3";
+package checkerz.checkerz;
+
+option go_package = "github.com/zetazzz/checker-z/x/checkerz/types";
+
+message StoredGame {
+  string index = 1; 
+  string board = 2; 
+  string turn = 3; 
+  string black = 4; 
+  string red = 5; 
+  
+}
+
