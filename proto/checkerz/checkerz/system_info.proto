@@ -1,0 +1,9 @@
+syntax = "proto3";
+package checkerz.checkerz;
+
+option go_package = "github.com/zetazzz/checker-z/x/checkerz/types";
+
+message SystemInfo {
+  uint64 nextId = 1; 
+  
+}

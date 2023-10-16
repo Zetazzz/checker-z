@@ -1,12 +1,16 @@
 syntax = "proto3";
+
 package checkerz.checkerz;
 
 import "gogoproto/gogo.proto";
 import "checkerz/checkerz/params.proto";
+import "checkerz/checkerz/system_info.proto";
 
 option go_package = "github.com/zetazzz/checker-z/x/checkerz/types";
 
 // GenesisState defines the checkerz module's genesis state.
 message GenesisState {
-  Params params = 1 [(gogoproto.nullable) = false];
+  Params     params     = 1 [(gogoproto.nullable) = false];
+  SystemInfo systemInfo = 2;
 }
+

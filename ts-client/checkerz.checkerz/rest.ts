@@ -16,12 +16,21 @@ export type CheckerzMsgCreatePostResponse = object;
  */
 export type CheckerzParams = object;
 
+export interface CheckerzQueryGetSystemInfoResponse {
+  SystemInfo?: CheckerzSystemInfo;
+}
+
 /**
  * QueryParamsResponse is response type for the Query/Params RPC method.
  */
 export interface CheckerzQueryParamsResponse {
   /** params holds all the parameters of this module. */
   params?: CheckerzParams;
+}
+
+export interface CheckerzSystemInfo {
+  /** @format uint64 */
+  nextId?: string;
 }
 
 export interface ProtobufAny {
@@ -171,6 +180,22 @@ export class Api<SecurityDataType extends unknown> extends HttpClient<SecurityDa
   queryParams = (params: RequestParams = {}) =>
     this.request<CheckerzQueryParamsResponse, RpcStatus>({
       path: `/zetazzz/checker-z/checkerz/params`,
+      method: "GET",
+      format: "json",
+      ...params,
+    });
+
+  /**
+   * No description
+   *
+   * @tags Query
+   * @name QuerySystemInfo
+   * @summary Queries a SystemInfo by index.
+   * @request GET:/zetazzz/checker-z/checkerz/system_info
+   */
+  querySystemInfo = (params: RequestParams = {}) =>
+    this.request<CheckerzQueryGetSystemInfoResponse, RpcStatus>({
+      path: `/zetazzz/checker-z/checkerz/system_info`,
       method: "GET",
       format: "json",
       ...params,

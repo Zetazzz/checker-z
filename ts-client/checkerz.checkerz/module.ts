@@ -10,6 +10,7 @@ import { Api } from "./rest";
 import { MsgCreatePost } from "./types/checkerz/checkerz/tx";
 
 import { Params as typeParams} from "./types"
+import { SystemInfo as typeSystemInfo} from "./types"
 
 export { MsgCreatePost };
 
@@ -100,6 +101,7 @@ class SDKModule {
 		this.updateTX(client);
 		this.structure =  {
 						Params: getStructure(typeParams.fromPartial({})),
+						SystemInfo: getStructure(typeSystemInfo.fromPartial({})),
 						
 		};
 		client.on('signer-changed',(signer) => {			
